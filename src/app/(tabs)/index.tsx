@@ -3,7 +3,7 @@ import PostListItem from "@/components/PostListItem";
 import { Text, View } from "@/components/Themed";
 import posts from "../../../assets/data/posts.json";
 
-const firstPost = posts[1];
+const firstPost = posts[2];
 
 export default function TabOneScreen() {
   return (
