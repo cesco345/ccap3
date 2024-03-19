@@ -4,7 +4,7 @@ import { Text, View } from "@/components/Themed";
 export default function JobsScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Jobs Screen</Text>
+      <Text style={styles.title}>Freelancer Jobs</Text>
     </View>
   );
 }
@@ -18,5 +18,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
+    color: "green",
   },
 });

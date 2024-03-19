@@ -3,12 +3,13 @@
     "id": "2",
     "author": {
       "id": "u2",
-      "name": "Vadim Savin",
-      "position": "Founder at notJust.dev",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png"
+      "name": "Jeff Bezos",
+      "position": "CoFounder at Consulting Cap",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg"
+      
     },
-    "content": "What does notJust Developer mean to you?",
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/pinterest/0.jpeg",
+    "content": "How to be prepared for the new Ice Age? Hint: It involves buying a sled!",
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg",
     "likes": 348,
     "comments": []
   },
@@ -29,16 +30,16 @@
     "id": "1",
     "author": {
       "id": "u1",
-      "name": "Jeff Bezon",
+      "name": "Jeff Bezos",
       "position": "Intern @Amazon",
       "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg"
     },
-    "content": "Exciting news! Just landed an internship at Amazon. I figured it's about time I try out this whole e-commerce thing. 😄 #NewBeginnings #FromCEOtoIntern",
+    "content": "ExExciting news! Just landed an internship at Amazon. I figured it's about time I show Jeff how it is done!citing news! Just landed an internship at Amazon. I figured it's about time I show Jeff how it is done!EExciting news! Just landed an internship at Amazon. I figured it's about time I show Jeff how it is done!xciting news! Just landed an internship at Amazon. I figured it's about time I show Jeff how it is done!. 😄 #NewBeginnings #FromCEOtoIntern",
     "likes": 254,
     "comments": [
       {
         "user": {
-          "name": "Elon Musk",
+          "name": "Jeff Bezos",
           "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png"
         },
         "comment": "Fight me",
@@ -46,7 +47,7 @@
       },
       {
         "user": {
-          "name": "Peter Johnson",
+          "name": "Gabriella Piscani",
           "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/11.png"
         },
         "comment": "Great job!",
@@ -58,11 +59,11 @@
     "id": "3",
     "author": {
       "id": "u3",
-      "name": "Peter Johnson",
-      "position": "CTO at Facebook",
+      "name": "Joe Biden",
+      "position": "Tech Evangelist at Consulting Cap",
       "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/zuck.jpeg"
     },
-    "content": "Join me for a talk on scaling technology in startups",
+    "content": "Join me for a talk on scaling technology in startups. This is an opportunity you won't want to miss! Whether you're an aspiring entrepreneur with a groundbreaking idea or a seasoned founder looking to take your startup to the next level, this talk is designed to empower you with the tools and strategies you need to succeed.",
     "likes": 432,
     "comments": []
   }

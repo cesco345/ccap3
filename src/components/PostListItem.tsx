@@ -2,6 +2,7 @@ import { Post } from "@/types";
 import { FontAwesome } from "@expo/vector-icons";
 import { Text, View, StyleSheet, Image } from "react-native";
 import { Header } from "react-native/Libraries/NewAppScreen";
+import { Link } from "expo-router";
 
 type PostListItemProps = {
   post: Post;
@@ -15,8 +16,8 @@ type FooterButtonProp = {
 function FooterButton({ text, icon }: FooterButtonProp) {
   return (
     <View style={{ flexDirection: "row" }}>
-      <FontAwesome name={icon} size={16} color="gray" />
-      <Text style={{ marginLeft: 5, color: "gray", fontWeight: "500" }}>
+      <FontAwesome name={icon} size={16} color="red" />
+      <Text style={{ marginLeft: 5, color: "blue", fontWeight: "500" }}>
         {text}
       </Text>
     </View>
@@ -25,26 +26,30 @@ function FooterButton({ text, icon }: FooterButtonProp) {
 
 export default function PostListItem({ post }: PostListItemProps) {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Image style={styles.userImage} source={{ uri: post.author.image }} />
-        <View>
-          <Text style={styles.userName}>{post.author.name}</Text>
+    <Link href={`/posts/${post.id}`}>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Image style={styles.userImage} source={{ uri: post.author.image }} />
 
-          <Text style={styles.position}>{post.author.position}</Text>
+          <View>
+            <Text style={styles.userName}>{post.author.name}</Text>
+
+            <Text style={styles.position}>{post.author.position}</Text>
+          </View>
         </View>
+        <Text style={styles.content}>{post.content}</Text>
+        {post.image && (
+          <Image source={{ uri: post.image }} style={styles.postImage} />
+        )}
+
+        <View style={styles.footer}>
+          <FooterButton text="Likes" icon="thumbs-o-up" />
+          <FooterButton text="Comments" icon="comment-o" />
+          <FooterButton text="Share" icon="share" />
+        </View>
+        <View style={{ flexDirection: "row" }}></View>
       </View>
-      <Text style={styles.content}>{post.content}</Text>
-      {post.image && (
-        <Image source={{ uri: post.image }} style={styles.postImage} />
-      )}
-      <View style={styles.footer}>
-        <FooterButton text="Likes" icon="thumbs-o-up" />
-        <FooterButton text="Comments" icon="comment-o" />
-        <FooterButton text="Share" icon="share" />
-      </View>
-      <View style={{ flexDirection: "row" }}></View>
-    </View>
+    </Link>
   );
 }
 
@@ -88,6 +93,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     paddingVertical: 10,
     borderTopWidth: 0.5,
-    borderColor: "lightgray",
+    borderColor: "white",
   },
 });

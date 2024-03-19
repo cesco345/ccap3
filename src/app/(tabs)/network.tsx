@@ -4,7 +4,7 @@ import { Text, View } from "@/components/Themed";
 export default function NetworkScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Network</Text>
+      <Text style={styles.title}>My Network</Text>
     </View>
   );
 }
@@ -18,5 +18,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
+    color: "green",
   },
 });
