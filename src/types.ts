@@ -13,4 +13,6 @@ export type Post = {
     name: string;
     position: string;
     image?: string;
+    backImage?: string;
+    about?: string;
     };

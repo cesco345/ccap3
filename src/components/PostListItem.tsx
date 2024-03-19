@@ -1,6 +1,13 @@
 import { Post } from "@/types";
 import { FontAwesome } from "@expo/vector-icons";
-import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Pressable,
+} from "react-native";
 import { Header } from "react-native/Libraries/NewAppScreen";
 import { Link } from "expo-router";
 
@@ -27,16 +34,22 @@ function FooterButton({ text, icon }: FooterButtonProp) {
 export default function PostListItem({ post }: PostListItemProps) {
   return (
     <Link href={`/posts/${post.id}`} asChild>
-      <TouchableOpacity style={styles.container}>
-        <View style={styles.header}>
-          <Image style={styles.userImage} source={{ uri: post.author.image }} />
+      <Pressable style={styles.container}>
+        <Link href={`/users/${post.author.id}`} asChild>
+          <Pressable style={styles.header}>
+            <Image
+              source={{ uri: post.author.image }}
+              style={styles.userImage}
+            />
 
-          <View>
-            <Text style={styles.userName}>{post.author.name}</Text>
+            <View>
+              <Text style={styles.userName}>{post.author.name}</Text>
 
-            <Text style={styles.position}>{post.author.position}</Text>
-          </View>
-        </View>
+              <Text>{post.author.position}</Text>
+            </View>
+          </Pressable>
+        </Link>
+
         <Text style={styles.content}>{post.content}</Text>
         {post.image && (
           <Image source={{ uri: post.image }} style={styles.postImage} />
@@ -48,7 +61,7 @@ export default function PostListItem({ post }: PostListItemProps) {
           <FooterButton text="Share" icon="share" />
         </View>
         <View style={{ flexDirection: "row" }}></View>
-      </TouchableOpacity>
+      </Pressable>
     </Link>
   );
 }
