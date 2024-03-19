@@ -1,6 +1,6 @@
 import { Post } from "@/types";
 import { FontAwesome } from "@expo/vector-icons";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Header } from "react-native/Libraries/NewAppScreen";
 import { Link } from "expo-router";
 
@@ -26,8 +26,8 @@ function FooterButton({ text, icon }: FooterButtonProp) {
 
 export default function PostListItem({ post }: PostListItemProps) {
   return (
-    <Link href={`/posts/${post.id}`}>
-      <View style={styles.container}>
+    <Link href={`/posts/${post.id}`} asChild>
+      <TouchableOpacity style={styles.container}>
         <View style={styles.header}>
           <Image style={styles.userImage} source={{ uri: post.author.image }} />
 
@@ -48,7 +48,7 @@ export default function PostListItem({ post }: PostListItemProps) {
           <FooterButton text="Share" icon="share" />
         </View>
         <View style={{ flexDirection: "row" }}></View>
-      </View>
+      </TouchableOpacity>
     </Link>
   );
 }
@@ -56,6 +56,9 @@ export default function PostListItem({ post }: PostListItemProps) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
+    width: "100%",
+    maxWidth: 600,
+    alignSelf: "center",
   },
   content: {
     margin: 10,
