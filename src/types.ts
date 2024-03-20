@@ -4,6 +4,7 @@ export type Post = {
     image?: string;
     likes: number;
     author: User;
+    name: string;
    
 
     };
@@ -15,4 +16,12 @@ export type Post = {
     image?: string;
     backImage?: string;
     about?: string;
+    experience?: Experience[];
+    };
+
+    export type Experience = {
+    id: string;
+    title: string;
+    companyName: string;
+    companyImage: string;
     };

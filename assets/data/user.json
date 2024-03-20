@@ -1,5 +1,5 @@
 {
-  "id": "u3",
+  "id": "u2",
   "name": "Vadim Savin",
   "position": "Founder at notJust.dev",
   "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png",
@@ -17,6 +17,21 @@
       "title": "Co-Founder & CTO",
       "companyName": "Fitenium",
       "companyImage": "https://media.licdn.com/dms/image/C4D0BAQHg4ra02yFrcw/company-logo_200_200/0/1573813337379?e=1697673600&v=beta&t=3wUnjLtfkYpIMJg4ZP2qq7Vj0rvU7aUOVrkffLabTuQ"
+    },
+    {
+      "id": "e3",
+      "title": "Co-Founder & CTO",
+      "companyName": "Fitenium",
+      "companyImage": "https://media.licdn.com/dms/image/C4D0BAQHg4ra02yFrcw/company-logo_200_200/0/1573813337379?e=1697673600&v=beta&t=3wUnjLtfkYpIMJg4ZP2qq7Vj0rvU7aUOVrkffLabTuQ"
+    },
+    {
+      "id": "e4",
+      "title": "Co-Founder & CTO",
+      "companyName": "Fitenium",
+      "companyImage": "https://media.licdn.com/dms/image/C4D0BAQHg4ra02yFrcw/company-logo_200_200/0/1573813337379?e=1697673600&v=beta&t=3wUnjLtfkYpIMJg4ZP2qq7Vj0rvU7aUOVrkffLabTuQ"
     }
   ]
 }
+
+
+

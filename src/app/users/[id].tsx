@@ -1,20 +1,64 @@
-import { useState } from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { useLayoutEffect, useState } from "react";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Pressable,
+  ScrollView,
+} from "react-native";
 import userJson from "../../../assets/data/user.json";
 import { useLocalSearchParams, useNavigation } from "expo-router";
+import { User } from "@/types";
+import ExperienceListItem from "@/components/ExperienceListItem";
 
 export default function UserProfile() {
   const [user, setUser] = useState(userJson);
   const { id } = useLocalSearchParams();
+  const navigation = useNavigation();
+
+  const onConnect = () => {
+    console.warn("Connect Pressed");
+  };
+  useLayoutEffect(() => {
+    navigation.setOptions({ title: user.name });
+  }, [user?.name]);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={true}>
       {/* Header */}
+      <View style={styles.header}>
+        {/* Background Image */}
+        <Image source={{ uri: user.backImage }} style={styles.backImage} />
+        <View style={styles.headerContent}>
+          {/* Profile Image */}
+          <Image source={{ uri: user.image }} style={styles.image} />
+
+          <Text style={styles.name}>{user.name}</Text>
+          <Text>{user.position}</Text>
+
+          {/* connect button*/}
+          <Pressable onPress={onConnect} style={styles.button}>
+            <Text style={styles.buttonText}>Connect</Text>
+          </Pressable>
+        </View>
+      </View>
 
       {/* About */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>About</Text>
+        <Text style={styles.paragraph}>{user.about}</Text>
+      </View>
 
       {/* Experience */}
-    </View>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Experience</Text>
+        {user.experience?.map((experience) => (
+          <ExperienceListItem key={experience.id} experience={experience} />
+        ))}
+      </View>
+    </ScrollView>
   );
 }
 
