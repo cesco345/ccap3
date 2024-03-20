@@ -15,13 +15,14 @@ import ExperienceListItem from "@/components/ExperienceListItem";
 export default function UserProfile() {
   const [user, setUser] = useState(userJson);
   const { id } = useLocalSearchParams();
+
   const navigation = useNavigation();
 
   const onConnect = () => {
     console.warn("Connect Pressed");
   };
   useLayoutEffect(() => {
-    navigation.setOptions({ title: user.name });
+    navigation.setOptions({ title: user?.name || "User" });
   }, [user?.name]);
 
   return (

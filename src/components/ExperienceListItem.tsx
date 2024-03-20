@@ -28,13 +28,14 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     borderBottomWidth: 0.5,
     borderColor: "lightgray",
-
-    backgroundColor: "white",
+    //backgroundColor: "white",
   },
   image: {
-    width: 50,
+    width: 60,
+    height: 60,
     aspectRatio: 1,
     marginRight: 5,
+    backgroundColor: "lightgray",
   },
   title: {
     fontSize: 16,
