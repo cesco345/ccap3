@@ -1,0 +1,7 @@
+configurationset:
+  - configuration:
+      name: postgresql_config
+      uri: postgresql://ep-cool-river-a58a7ua5.us-east-2.aws.neon.tech/socialdb?user=socialdb_owner&password=xYFhn7muko3G
+  - configuration:
+      name: stepzen_config
+      uri: postgresql://postgresql.introspection.stepzen.net/introspection?user=testUserIntrospection&password=HurricaneStartingSample1934
