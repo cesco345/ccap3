@@ -8,6 +8,8 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { ApolloProvider } from "@apollo/client";
+import client from "@/apollo/Client";
 
 import { useColorScheme } from "@/components/useColorScheme";
 
@@ -52,16 +54,18 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen
-          name="(tabs)"
-          options={{ title: "Back", headerShown: false }}
-        />
-        <Stack.Screen name="modal" options={{ presentation: "modal" }} />
-        <Stack.Screen name="posts/[id]" options={{ title: "Post" }} />
-        <Stack.Screen name="users/[id]" options={{ title: "Profile" }} />
-      </Stack>
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+        <Stack>
+          <Stack.Screen
+            name="(tabs)"
+            options={{ title: "Back", headerShown: false }}
+          />
+          <Stack.Screen name="modal" options={{ presentation: "modal" }} />
+          <Stack.Screen name="posts/[id]" options={{ title: "Post" }} />
+          <Stack.Screen name="users/[id]" options={{ title: "Profile" }} />
+        </Stack>
+      </ThemeProvider>
+    </ApolloProvider>
   );
 }
